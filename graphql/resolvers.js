@@ -8,7 +8,7 @@ module.exports = {
         }
     },
     Mutation: {
-        creatUser(parent, args, context, info) {
+        createUser(parent, args, context, info) {
             return null;
         },
         updateUser(parent, args, context, info) {

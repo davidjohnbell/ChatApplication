@@ -4,7 +4,7 @@
   "description": "seng15 assignment 3 chat application",
   "main": "index.js",
   "scripts": {
-    "run dev": "node index.js",
+    "dev": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
