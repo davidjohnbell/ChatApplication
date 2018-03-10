@@ -1,0 +1,23 @@
+{
+  "name": "seng",
+  "version": "1.0.0",
+  "description": "seng15 assignment 3 chat application",
+  "main": "index.js",
+  "scripts": {
+    "run dev": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidjohnbell/ChatApplication.git"
+  },
+  "author": "David Bell",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidjohnbell/ChatApplication/issues"
+  },
+  "homepage": "https://github.com/davidjohnbell/ChatApplication#readme",
+  "dependencies": {
+    "graphql-yoga": "^1.5.0"
+  }
+}
