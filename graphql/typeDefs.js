@@ -23,12 +23,12 @@ type Room {
 
 type User {
     id: ID!,
-    color: Int
+    color: String!
 }
 
 type Chat {
     user: ID!,
     message: String!,
-    date: Int
+    date: String!
 }
 `

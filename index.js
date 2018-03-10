@@ -3,6 +3,7 @@ const express = require('express');
 const { GraphQLServer, PubSub } = require('graphql-yoga');
 const typeDefs = require('./graphql/typeDefs');
 const resolvers = require('./graphql/resolvers');
+const room = require('./db/db');
 
 //SERVER
 const pubsub = new PubSub();
@@ -16,7 +17,7 @@ const options = {
 const server = new GraphQLServer({ 
     typeDefs,
     resolvers,
-    context: (req) => ({ pubsub})
+    context: (req) => ({ pubsub, room})
 });
 
 server.express.use('/', express.static('site'));
