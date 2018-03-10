@@ -3,7 +3,8 @@ function User() {
     this.createUser = function() {
         let _user = {
             id: Math.random().toString(36).substring(2, 15),
-            color: 0
+            name: Math.random().toString(36).substring(2, 15),
+            color: 'black'
         };
         this.users.push(_user);
         return _user;

@@ -22,6 +22,7 @@ type Room {
 
 type User {
     id: ID!,
+    name: String!,
     color: String!
 }
 

@@ -14,7 +14,7 @@ module.exports = {
             return user;
         },
         updateUser(parent, args, context, info) {
-            let user = context.room.User.updateUser(args.id, args.color);
+            let user = context.room.User.updateUser(args.id, args.name, args.color);
             context.pubsub.publish('newState', context.room.getRoom());
             return user;
         },
@@ -27,7 +27,7 @@ module.exports = {
     Subscription: {
       newState: {
         subscribe: (parent, args, context, info) => {
-          return pubsub.asyncIterator('newState');
+          return context.pubsub.asyncIterator('newState');
         }
       }
     }
