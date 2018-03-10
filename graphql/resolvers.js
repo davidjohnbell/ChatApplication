@@ -4,31 +4,30 @@ module.exports = {
             return null;
         },
         getRoom(parent, args, context, info) {
-            return null;
+            return context.room.getRoom();
         }
     },
     Mutation: {
         createUser(parent, args, context, info) {
-            return null;
+            let user = context.room.User.createUser();
+            context.pubsub.publish('newState', context.room.getRoom());
+            return user;
         },
         updateUser(parent, args, context, info) {
-            return null;
+            let user = context.room.User.updateUser(args.id, args.color);
+            context.pubsub.publish('newState', context.room.getRoom());
+            return user;
         },
         createChat(parent, args, context, info) {
-            return null;
+            let chat = context.room.User.updateUser(args.id, args.text);
+            context.pubsub.publish('newState', context.room.getRoom());
+            return chat;
         }
     },
     Subscription: {
-      newChat: {
+      newState: {
         subscribe: (parent, args, context, info) => {
-          let pubsub = context.pubsub;
-          return pubsub.asyncIterator(args.streamId);
-        }
-      },
-      newUser: {
-        subscribe: (parent, args, context, info) => {
-          let pubsub = context.pubsub;
-          return pubsub.asyncIterator(args.streamId);
+          return pubsub.asyncIterator('newState');
         }
       }
     }

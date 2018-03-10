@@ -7,13 +7,12 @@ type Query {
 
 type Mutation {
     createUser: User!,
-    updateUser(id:ID!): User!,
-    createChat: Chat!
+    updateUser(id:ID!, color:String!): User!,
+    createChat(id:ID!, text:String!): Chat!
 }
 
 type Subscription {
-    newChat: Chat!,
-    newUser: User!
+    newState: Room!
 }
 
 type Room {
