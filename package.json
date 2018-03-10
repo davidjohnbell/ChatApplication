@@ -19,12 +19,16 @@
   },
   "homepage": "https://github.com/davidjohnbell/ChatApplication#readme",
   "dependencies": {
+    "apollo-boost": "^0.1.2",
     "babel-runtime": "^6.26.0",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
+    "graphql": "^0.13.1",
+    "graphql-tag": "^2.8.0",
     "graphql-yoga": "^1.5.0",
     "material-ui": "^0.20.0",
     "react": "^16.2.0",
+    "react-apollo": "^2.0.4",
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
