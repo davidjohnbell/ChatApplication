@@ -10,17 +10,20 @@ module.exports = {
     Mutation: {
         createUser(parent, args, context, info) {
             let user = context.room.User.createUser();
-            context.pubsub.publish('newState', context.room.getRoom());
+            let room = context.room.getRoom();
+            context.pubsub.publish('newState', {newState:room});
             return user;
         },
         updateUser(parent, args, context, info) {
             let user = context.room.User.updateUser(args.id, args.name, args.color);
-            context.pubsub.publish('newState', context.room.getRoom());
+            let room = context.room.getRoom();
+            context.pubsub.publish('newState', {newState:room});
             return user;
         },
         createChat(parent, args, context, info) {
-            let chat = context.room.User.updateUser(args.id, args.text);
-            context.pubsub.publish('newState', context.room.getRoom());
+            let chat = context.room.Chat.createChat(args.id, args.text);
+            let room = context.room.getRoom();
+            context.pubsub.publish('newState', {newState:room});
             return chat;
         }
     },
