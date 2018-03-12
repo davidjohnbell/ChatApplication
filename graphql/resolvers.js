@@ -1,9 +1,9 @@
 module.exports = {
     Query: {
         whoAmI(parent, args, context, info) {
-            let session = context.session;
-            session.user = session.isNew ? context.room.User.createUser() : session.user;
-            return session.user;
+            //let session = context.session;
+            //session.user = session.isNew ? context.room.User.createUser() : session.user;
+            return context.room.User.createUser();
         },
         getRoom(parent, args, context, info) {
             return context.room.getRoom();

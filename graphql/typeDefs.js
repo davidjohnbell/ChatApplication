@@ -7,7 +7,7 @@ type Query {
 
 type Mutation {
     createUser: User!,
-    updateUser(id:ID!, color:String!): User!,
+    updateUser(id:ID!, name:String!, color:String!): User!,
     createChat(id:ID!, text:String!): Chat!
 }
 

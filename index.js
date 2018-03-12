@@ -18,7 +18,7 @@ const options = {
 const server = new GraphQLServer({ 
     typeDefs,
     resolvers,
-    context: (req) => ({ pubsub, room, session:req.request.session})
+    context: (req) => ({ pubsub, room})
 });
 
 server.express.use(cookieSession({
